@@ -83,7 +83,7 @@ class HttpTunnelingSocketClient(HttpTunnelingSocketBase):
             if self.send_buffer == b'':
                 payload = b''
             else:
-                # send last send buffer item
+                # send oldest send buffer chunk
                 payload = self.send_buffer[:self.chunk_size]
             # send http request
             try:
@@ -136,7 +136,7 @@ class HttpTunnelingSocketServer(HttpTunnelingSocketBase):
                 if not len(payload) == 0:
                     # send payload to recv buffer
                     self.recv_buffer += payload
-                # send as response last send buffer item, otherwise send empty response
+                # send as response oldest send buffer chunk, otherwise send empty response
                 if self.send_buffer == b'':
                     payload = b''
                 else:

@@ -87,8 +87,9 @@ print(data)            # print b"Hello World!3.1416{'a': 1, 'b': 2}"
 ![Structure of communication functioning.](doc/how_communication_work.png)
 
 Note:
- - `chunk_size` and `lport` must be the same in all host involved in communication.
+ - `chunk_size` and `rport`/`lport` must be the same in all host involved in communication.
  - It's best not to run `HttpTunnelingSocketClient` and `HttpTunnelingSocketServer` in the same script.
+ - Send and receive are asymmetric as operation, so if you want send and receive data in real time and manage it simultaneously you must do it in separated threads: one thread for sending and one thread for receiving (see random_stream examples).
 
 ### - Usage in HTTPS
 
