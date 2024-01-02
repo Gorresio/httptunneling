@@ -96,4 +96,4 @@ To use this library in HTTPS:
 
  - The host acting as the client must initialize `HttpTunnelingSocketClient` with `ssl=True`.
  - The host acting as the server should be behind a reverse proxy (such as nginx) responsible for handling HTTPS communication. The domain and certificates must be properly configured.
- - If you wish to bypass certificate verification, simply modify the `HttpTunnelingSocketClient` class at line 66 and add the `verify=False` parameter to `requests.post` call.
+ - If you wish to bypass certificate verification, simply modify the `HttpTunnelingSocketClient` class at line 90 and add the `verify=False` parameter to `requests.post` call.
