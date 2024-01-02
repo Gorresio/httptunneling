@@ -59,13 +59,13 @@ print(data)            # print b"Hello World!3.1416{'a': 1, 'b': 2}"
 
 ### - Datasheet
 
-1. `HttpTunnelingSocketBase` class:
+- `HttpTunnelingSocketBase` class:
     - `send(self, data)` :
         - `data`: The data to be sent. Any type is allowed: if it is not binary it will be converted to string and then to binary with UTF-8 encoding.
     - `recv(self, size)` : 
         - `size`: The size of data to be received.
 
-2. `HttpTunnelingSocketClient` class (inherits from `HttpTunnelingSocketBase`):
+- `HttpTunnelingSocketClient` class (inherits from `HttpTunnelingSocketBase`):
     - `__init__(self, rhost, rport, polling_delta_time=0.1, ssl=False, uri='/', chunk_size=1024, http_request_timeout=8)` : 
         - `rhost`: The remote host to connect to.
         - `rport`: The remote port to connect to.
@@ -76,7 +76,7 @@ print(data)            # print b"Hello World!3.1416{'a': 1, 'b': 2}"
         - `http_request_timeout`: The timeout duration (in seconds) for the HTTP request. Default is 8 seconds.
     - `management_task(self)` : Task to manage HTTP(S) polling. Internal use.
 
-3. `HttpTunnelingSocketServer` class (inherits from `HttpTunnelingSocketBase`):
+- `HttpTunnelingSocketServer` class (inherits from `HttpTunnelingSocketBase`):
     - `__init__(self, lport, lhost='', chunk_size=1024, http_request_timeout=8)` : 
         - `lport`: The local port to listen on.
         - `lhost`: The local host to bind the server to. Default is '' (all interfaces).

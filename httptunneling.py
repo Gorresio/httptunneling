@@ -104,10 +104,9 @@ class HttpTunnelingSocketClient(HttpTunnelingSocketBase):
 class HttpTunnelingSocketServer(HttpTunnelingSocketBase):
 
 
-    def __init__(self, lport, lhost='', polling_delta_time=0.1, chunk_size=1024, http_request_timeout=8):
+    def __init__(self, lport, lhost='', chunk_size=1024, http_request_timeout=8):
         self.lport = lport
         self.lhost = lhost
-        self.polling_delta_time = polling_delta_time
         self.chunk_size = chunk_size
         self.http_request_timeout = http_request_timeout
         super().__init__() # call base class constructor
